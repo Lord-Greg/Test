@@ -1,0 +1,8 @@
+<% @artykul.comments.each do |koment| %>
+	<p>
+		<strong>Pseudonim: </strong>
+		<%= koment.name %>
+		<strong>Komentarz: </strong>
+		<%= koment.body %>
+	</p>
+<% end %>

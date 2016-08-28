@@ -1,0 +1,24 @@
+<%= form_for(@user) do |f|%>
+	<% if(@user.errors.any?) %>
+		<div>
+			<%= pluralize(@user.errors.count, "error") %>:
+			<ul>
+				<% @user.errors.full_message.each do |inf| %>
+					<li>
+						<%= inf %>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	
+	<p>
+		<%= f.label :"Nazwa Użytkownika:" %>
+		<%= f.text_field :name %>
+		<br/>
+		<%= f.label :"Hasło:" %>
+		<%= f.text_field :password %>
+		<br/>
+		<%= f.submit :"Zatwierdź" %>
+	</p>
+<% end %>

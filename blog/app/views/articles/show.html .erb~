@@ -1,0 +1,8 @@
+<p>
+	<strong>Tytuł:</strong>
+	<%= @article.title %>
+</p>
+<p>
+	<strong>Treść:</strong>
+	<%= @article.text %>
+</p>

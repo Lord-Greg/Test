@@ -1,0 +1,11 @@
+<p>
+	<strong>Pseudonim: </strong>
+	<%= comment.name %><br/>
+	<strong>Komentarz: </strong>
+	<%= comment.body %>
+</p>
+<p>
+	<%= link_to("Usuń", [comment.article, comment],
+							method: :delete,
+							data: { confirm: "Czy na pewno chcesz usunąć ten komentarz?" }) %>
+</p>

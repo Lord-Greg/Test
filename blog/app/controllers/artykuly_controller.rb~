@@ -1,0 +1,15 @@
+class ArtykulyController < ApplicationController
+	def new
+	end
+
+	def create
+		@artykul = Artykul.new(zweryfikuj_artykul())
+		@artykul.save
+		redirect_to @artykul
+	end
+
+	private
+		def zweryfikuj_artykul
+			params.require(:artykul).permit(:tytul, :tresc)
+		end
+end

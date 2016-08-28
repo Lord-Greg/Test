@@ -1,0 +1,13 @@
+<%= form_for([@artykul, @artykul.comments.build]) do |f| %>
+	<p>
+		<%= f.label :"Pseudonim:" %><br/>
+		<%= f.text_field :name %>
+	</p>
+	<p>
+		<%= f.label :"Treść:" %><br/>
+		<%= f.text_area :body %>
+	</p>
+	<p>
+		<%= f.submit :Zapisz %>
+	</p>
+<% end %>

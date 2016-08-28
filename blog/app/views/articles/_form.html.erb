@@ -1,0 +1,27 @@
+<%= form_for @artykul do |f| %>
+	<% if(@artykul.errors.any?) %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@artykul.errors.count, "error") %>
+				<br/>Błąd! Twój artykuł nie został zapisany!<br/>
+			</h2>
+			<ul>
+				<% @artykul.errors.full_messages.each do |info| %>
+					<li><%= info %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<p>
+		<%= f.label :Tytuł %><br/>
+		<%= f.text_field :title %>
+	</p>
+	<p>
+		<%= f.label :Treść %><br/>
+		<%= f.text_area :text %>
+	</p>
+	<p>
+		<%= f.submit :Zapisz %>
+	</p>
+<% end %>

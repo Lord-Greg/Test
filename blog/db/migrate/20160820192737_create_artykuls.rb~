@@ -1,0 +1,10 @@
+class CreateArtykuls < ActiveRecord::Migration[5.0]
+  def change
+    create_table :artykuls do |t|
+      t.string :tytul
+      t.text :tresc
+
+      t.timestamps
+    end
+  end
+end

@@ -1,0 +1,40 @@
+<p>
+	<strong>Tytuł:</strong>
+	<%= @artykul.title %>
+</p>
+<p>
+	<strong>Treść:</strong>
+	<%= @artykul.text %>
+</p>
+
+
+
+<h2>Komentarze:</h2>
+<% @artykul.comments.each do |komentarz| %>
+	<p>
+		<strong>Pseudonim:</strong>
+		<%= komentarz.name %>
+		<br/>
+		<strong>Komentarz:</strong>
+		<%= komentarz.body %>
+	</p>
+<% end %>
+
+
+<h2>Dodaj komentarz:</h2>
+<%= form_for([@artykul, @artykul.comments.build]) do |f| %>
+	<p>
+		<%= f.label :Pseudonim %><br/>
+		<%= f.text_field :name %>
+	</p>
+	<p>
+		<%= f.label :Komentarz %><br/>
+		<%= f.text_area :body %>
+	</p>
+	<p>
+		<%= f.submit :Wyślij %>
+	</p>
+<% end %>
+
+<%= link_to("Edytuj", edit_article_url()) %> |
+<%= link_to("Wróć", articles_path(@artykul)) %>

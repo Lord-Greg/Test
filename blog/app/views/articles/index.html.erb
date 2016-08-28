@@ -1,0 +1,24 @@
+<h1>Lista Artykułów:</h1>
+
+<table>
+	<tr>
+		<th>Tytuł</th>
+		<th>Treść</th>
+	</tr>
+
+	<% @artykul.each do |artykul| %>
+	<tr>
+		<td><%= artykul.title %></td>
+		<td><%= artykul.text %></td>
+		<td><%= link_to("Czytaj", article_path(artykul)) %></td>
+		<td><%= link_to("Edytuj", edit_article_url(artykul)) %></td>
+		<td><%= link_to("Usuń", article_path(artykul),
+						method: :delete,
+						data: { confirm: "Czy na pewno chcesz usunąć ten artykuł?" }) %></td>
+	</tr>
+	<% end %>
+</table>
+
+<p>
+	<%= link_to("Dodaj", new_article_path) %>
+</p>

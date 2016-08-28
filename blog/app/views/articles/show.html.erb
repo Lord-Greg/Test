@@ -1,0 +1,20 @@
+<p>
+	<strong>Tytuł:</strong>
+	<%= @artykul.title %>
+</p>
+<p>
+	<strong>Treść:</strong>
+	<%= @artykul.text %>
+</p>
+
+
+
+<h2>Komentarze:</h2>
+<%= render @artykul.comments %>
+
+
+<h2>Dodaj komentarz:</h2>
+<%= render "comments/form" %>
+
+<%= link_to("Edytuj", edit_article_url()) %> |
+<%= link_to("Wróć", articles_path(@artykul)) %>

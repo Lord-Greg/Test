@@ -1,0 +1,4 @@
+<h1>Rejestracja</h1>
+<%= render "form" %>
+
+<%= link_to("Wróć", welcome_index_path)
